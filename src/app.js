@@ -11,6 +11,8 @@ app.use(cookieParser());
 app.use(session({ resave: false, saveUninitialized: true, secret: 'foo' }));
 app.use(bodyParser.json());
 
+app.use('/assets', express.static(__dirname + '/../bower_components'));
+
 app.get('/', function (req, res) {
   res.render('home');
 });
