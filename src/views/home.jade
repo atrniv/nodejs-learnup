@@ -1,12 +1,33 @@
-doctype html
-html
-  head
-    title HackerLyfe
-    link(rel='stylesheet', href='/assets/bootstrap/dist/css/bootstrap.min.css')
-    script(src='/assets/angular/angular.min.js')
-  body
-    #content
-      h1 Welcome to HackerLyfe
+extends layout
+
+block content
+  #main.col-md-8
+    h1 Challenge #{challenge.id}
+    p.lead #{challenge.description}
+    
+    h4 Sample Input
+    pre #{challenge.sample_input}
+    
+    h4 Sample Output
+    pre #{challenge.sample_output}
+    
+    blockquote
+      p 
+        | All inputs will be passed as commandline arguments. You can access it
+        | from process.argv. The first input will be process.argv[2]
+
+    h2 Your Solution
+    form
+      .form-group
+        textarea(rows="10").form-control
       
-    #footer
-      h5 Copyright Hacker Solutions Pvt. Ltd
+      .form-group
+        button.btn.btn-primary Submit
+
+  #sidebar.col-md-4
+    #profile
+      h2 My Stats
+    
+    
+    #leaderboard
+      h2 Hacker Leaderboard

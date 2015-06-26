@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  #main.col-md-8
+    .jumbotron
+      h1 Welcome to HackerLyfe
+    
+      p 
+        | Prove your worth as a Hacker by passing our series of mind numbingly
+        | difficult challenges ! May the force be with you!
+      
+  #sidebar.col-md-4
+    h3 Login
+    form
+      .form-group
+        label(for='username') Username
+        input(type='text', id='username').form-control
+      .form-group
+        label(for='password') Password
+        input(type='password', id='password').form-control
+      button.btn.btn-primary Login
+    
+    hr
+        
+    h3 Register
+    form
+      .form-group
+        label(for='username') Username
+        input(type='text', id='username').form-control
+      .form-group
+        label(for='password') Password
+        input(type='password', id='password').form-control
+      button.btn Register
