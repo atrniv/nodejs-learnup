@@ -1,16 +1,21 @@
 extends layout
 
 block content
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        p.navbar-brand Hi, #{username} !
+        a(href='/logout').btn.btn-default.navbar-btn.navbar-right Logout
   #main.col-md-8
     h1 Challenge #{challenge.id}
     p.lead #{challenge.description}
-    
+
     h4 Sample Input
     pre #{challenge.sample_input}
-    
+
     h4 Sample Output
     pre #{challenge.sample_output}
-    
+
     blockquote
       p 
         | All inputs will be passed as commandline arguments. You can access it
@@ -20,14 +25,14 @@ block content
     form
       .form-group
         textarea(rows="10").form-control
-      
+  
       .form-group
         button.btn.btn-primary Submit
 
   #sidebar.col-md-4
     #profile
       h2 My Stats
-    
-    
+
+
     #leaderboard
       h2 Hacker Leaderboard

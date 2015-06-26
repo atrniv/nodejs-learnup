@@ -1,5 +1,8 @@
 extends layout
 
+block header
+  script(src='scripts/main.js')
+
 block content
   #main.col-md-8
     .jumbotron
@@ -9,25 +12,25 @@ block content
         | Prove your worth as a Hacker by passing our series of mind numbingly
         | difficult challenges ! May the force be with you!
       
-  #sidebar.col-md-4
+  #sidebar(ng-app='mainApp').col-md-4
     h3 Login
-    form
+    form(ng-controller='loginController', ng-submit='login()')
       .form-group
         label(for='username') Username
-        input(type='text', id='username').form-control
+        input(type='text', id='username', ng-model='loginForm.username').form-control
       .form-group
         label(for='password') Password
-        input(type='password', id='password').form-control
+        input(type='password', id='password', ng-model='loginForm.password').form-control
       button.btn.btn-primary Login
     
     hr
         
     h3 Register
-    form
+    form(ng-controller='registerController', ng-submit='register()')
       .form-group
         label(for='username') Username
-        input(type='text', id='username').form-control
+        input(type='text', id='username', ng-model='registerForm.username').form-control
       .form-group
         label(for='password') Password
-        input(type='password', id='password').form-control
+        input(type='password', id='password', ng-model='registerForm.password').form-control
       button.btn Register

@@ -16,6 +16,7 @@ app.use(session({ resave: false, saveUninitialized: true, secret: 'foo' }));
 app.use(bodyParser.json());
 
 app.use('/assets', express.static(__dirname + '/../bower_components'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 
 app.use(function (req, res, next) {
   // Open the database if it has not already been done
